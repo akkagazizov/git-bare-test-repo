@@ -15,5 +15,11 @@ app.add_middleware(
 async def info():
     return {"title": "FastAPI", "message": "Hello World"}
 
+
+@app.get("/start")
+async def start():
+    return {"title": "Start", "message": "A new amazing feature"}
+
+
 if __name__ == "__main__":
     uvicorn.run(app)
