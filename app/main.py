@@ -2,7 +2,10 @@ from fastapi import FastAPI, status
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
+
 import kpi_object_pos_err
+import kpi_line_fn
+
 
 app = FastAPI(debug=True, title='Custom API', version="0.0.1")
 app.add_middleware(
@@ -13,6 +16,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.include_router(kpi_object_pos_err.router)
+app.include_router(kpi_line_fn.router)
+
 
 @app.get('/')
 async def info():
