@@ -1,0 +1,4 @@
+service:
+  name: "Lines FN"
+  version: "0.0.1"
+  flag: True
