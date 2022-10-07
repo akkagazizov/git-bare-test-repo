@@ -2,6 +2,8 @@ from fastapi import FastAPI, status
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
+
+import kpi_object_pos_err
 import kpi_line_fn
 
 
@@ -13,6 +15,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.include_router(kpi_object_pos_err.router)
 app.include_router(kpi_line_fn.router)
 
 
