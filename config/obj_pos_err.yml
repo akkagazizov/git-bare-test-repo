@@ -1,0 +1,4 @@
+service:
+  name: "Object Pos Error"
+  version: "0.0.2"
+  flag: True
